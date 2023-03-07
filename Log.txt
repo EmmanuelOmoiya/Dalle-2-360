@@ -1,0 +1,9 @@
+[2023-03-02 19:46] - Created Navbar.... - Rafe
+[2023-03-02 21:07] - Added Paranova... - Rafe
+[2023-03-02 23:52] - Added Skeleton Loading ... - Rafe
+[2023-03-03 02:15] - Created User Prompt... - Rafe
+[2023-03-03 05:19] - Created Settings... - Rafe
+[2023-03-03 11:37] - Added Settings To Mobile... - Rafe
+[2023-03-03 23:12] - Created A Filter... - Rafe
+[2023-03-06 03:21] - Completed UI I Think... - Rafe
+[2023-03-06 03:30] - Formatted... - Rafe

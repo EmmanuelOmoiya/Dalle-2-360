@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer components {
+	.input_shadow {
+		box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.25);
+        @apply border-blue-400
+	}
+}
+
+::-webkit-scrollbar{
+	@apply bg-black w-2 rounded-md;
+}
+::-webkit-scrollbar-thumb{
+	@apply bg-rose-500 rounded-md hover:bg-rose-600;
+}
+
+::-webkit-scrollbar-track{
+	@apply bg-black rounded-md;
+}
+
+@font-face {
+	font-family: "Beckman";
+	src: url("../fonts/Beckman-Free.otf");
+}
+
+@font-face {
+	font-family: 'Brolink';
+	src: url('../fonts/Brolink-DEMO.otf');
+}
+
+@font-face {
+	font-family: 'Elianto';
+	src: url('../fonts/Elianto-Regular.otf');
+}
