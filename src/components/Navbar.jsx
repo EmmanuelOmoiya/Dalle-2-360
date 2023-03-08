@@ -3,23 +3,30 @@ import discord from "/assets/images/discord.png";
 import { Disclosure, Transition, Tab } from "@headlessui/react";
 import { ChevronDown } from "heroicons-react";
 import { NavItem, NavCategory, EnvironmentConfig } from ".";
-import { generateImage } from '../utils';
-import { nav } from '../constants';
-import { useAppContext } from '../Context/AppContext';
+import { generateImage } from "../utils";
+import { nav } from "../constants";
+import { useAppContext } from "../Context/AppContext";
 
 export default function Navbar() {
-    const { selectedCat, sceneItems, selectedLink, setSelectedLink, setSelectedCat, setSceneItems } = useAppContext();
+  const {
+    selectedCat,
+    sceneItems,
+    selectedLink,
+    setSelectedLink,
+    setSelectedCat,
+    setSceneItems,
+  } = useAppContext();
 
-    function handleSubmit() {
-        if(selectedCat && sceneItems){
-          let text = `An Equirectangular view of a ${selectedCat} with ${sceneItems.join(
-            ", "
-          )}.`;
-          generateImage(text);
-        } else {
-          alert('You need to choose and add the required choices and scenes')
-        }
-      }
+  function handleSubmit() {
+    if (selectedCat && sceneItems) {
+      let text = `An Equirectangular view of a ${selectedCat} with ${sceneItems.join(
+        ", "
+      )}.`;
+      generateImage(text);
+    } else {
+      alert("You need to choose and add the required choices and scenes");
+    }
+  }
 
   return (
     <nav className="text-white bg-black w-full p-3 md:hidden">
@@ -55,50 +62,56 @@ export default function Navbar() {
                 <Disclosure.Panel className="mt-2 p-2 font-medium space-y-2">
                   <Tab.Group className="flex items-center mb-20 overflow-y-auto">
                     <Tab.List className="flex flex-col gap-3 w-full">
-                    {nav.map((item) => {
-                return item.name !== "dropdown" ? (
-					<>
-                  <NavItem
-                    name={item.name}
-                    selectedLink={selectedLink}
-                    setSelectedLink={setSelectedLink}
-                  />
-				  </>
-                ) : (
-					<>
-				  <EnvironmentConfig selectedLink={selectedLink} setSelectedLink={setSelectedLink} selectedCat={selectedCat} setSelectedCat={setSelectedCat} dropdowns={item.dropdowns}/>
+                      {nav.map((item) => {
+                        return item.name !== "dropdown" ? (
+                          <>
+                            <NavItem
+                              name={item.name}
+                              selectedLink={selectedLink}
+                              setSelectedLink={setSelectedLink}
+                            />
+                          </>
+                        ) : (
+                          <>
+                            <EnvironmentConfig
+                              selectedLink={selectedLink}
+                              setSelectedLink={setSelectedLink}
+                              selectedCat={selectedCat}
+                              setSelectedCat={setSelectedCat}
+                              dropdowns={item.dropdowns}
+                            />
 
-                  <Tab
-                    className="w-full flex items-center gap-2 focus:outline-none"
-                    onClick={() => setSelectedLink("dropdown")}
-                  >
-                    <>
-                      <div
-                        className={`h-1.5 w-1.5 rounded-full transition-all duration-300 ${
-                          selectedLink === "dropdown"
-                            ? "bg-rose-500 h-full"
-                            : "bg-white"
-                        }`}
-                      ></div>
-                      <NavCategory
-                        dropdowns={item.dropdowns}
-                        selectedCat={selectedCat}
-                        setSelectedCat={setSelectedCat}
-                        styling={`${
-                          selectedLink === "dropdown"
-                            ? "border-rose-400"
-                            : "border-white"
-                        }`}
-                        sceneItems={sceneItems}
-                        setSceneItems={setSceneItems}
-						selectedLink={selectedLink}
-                    setSelectedLink={setSelectedLink}
-                      />
-                    </>
-                  </Tab>
-				  </>
-                );
-              })}
+                            <Tab
+                              className="w-full flex items-center gap-2 focus:outline-none"
+                              onClick={() => setSelectedLink("dropdown")}
+                            >
+                              <>
+                                <div
+                                  className={`h-1.5 w-1.5 rounded-full transition-all duration-300 ${
+                                    selectedLink === "dropdown"
+                                      ? "bg-rose-500 h-full"
+                                      : "bg-white"
+                                  }`}
+                                ></div>
+                                <NavCategory
+                                  dropdowns={item.dropdowns}
+                                  selectedCat={selectedCat}
+                                  setSelectedCat={setSelectedCat}
+                                  styling={`${
+                                    selectedLink === "dropdown"
+                                      ? "border-rose-400"
+                                      : "border-white"
+                                  }`}
+                                  sceneItems={sceneItems}
+                                  setSceneItems={setSceneItems}
+                                  selectedLink={selectedLink}
+                                  setSelectedLink={setSelectedLink}
+                                />
+                              </>
+                            </Tab>
+                          </>
+                        );
+                      })}
                       <button
                         onClick={handleSubmit}
                         className="w-full mt-4 bg-rose-500 rounded-lg py-1.5 font-medium hover:bg-rose-600 focus:bg-rose-600 transition-all duration-300"

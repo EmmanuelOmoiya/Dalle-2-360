@@ -15,7 +15,10 @@ export default function EnvironmentConfig({
           selectedLink === "sceneChoice" ? "bg-rose-500 h-full" : "bg-white"
         }`}
       ></div>
-      <Disclosure className="w-full" onClick={()=>setSelectedLink('sceneChoice')}>
+      <Disclosure
+        className="w-full"
+        onClick={() => setSelectedLink("sceneChoice")}
+      >
         {({ open }) => (
           <div className={`border w-full rounded-lg p-2 `}>
             <Disclosure.Button as={`div`} className="w-full focus:outline-none">
@@ -40,27 +43,27 @@ export default function EnvironmentConfig({
               <Disclosure.Panel className="py-2">
                 <Tab.Group vertical>
                   <Tab.List className={`flex flex-col gap-2`}>
-                    {
-                      dropdowns.map((item, index)=>(
+                    {dropdowns.map((item, index) => (
                       <Tab
-                      key={index}
+                        key={index}
                         onClick={() => setSelectedCat(item.name)}
                         className="text-left p-2 rounded-md font-medium flex items-center justify-between hover:translate-x-2 duration-300 w-full"
                       >
-                          <div className="flex gap-1 flex-row items-center w-full">
-                            <div
-                              className={`h-1.5 w-1.5 rounded-full transition-all duration-300 ${
-                                selectedCat === item.name ? "bg-rose-500 h-4" : "bg-white"
-                              }`}
-                            ></div>
-                            <div className="flex items-center justify-between w-full">
-                              {item.name}
-                              {selectedCat === item.name && <CheckCircle />}
-                            </div>
+                        <div className="flex gap-1 flex-row items-center w-full">
+                          <div
+                            className={`h-1.5 w-1.5 rounded-full transition-all duration-300 ${
+                              selectedCat === item.name
+                                ? "bg-rose-500 h-4"
+                                : "bg-white"
+                            }`}
+                          ></div>
+                          <div className="flex items-center justify-between w-full">
+                            {item.name}
+                            {selectedCat === item.name && <CheckCircle />}
                           </div>
+                        </div>
                       </Tab>
-                      ))
-                    }
+                    ))}
                   </Tab.List>
                 </Tab.Group>
               </Disclosure.Panel>

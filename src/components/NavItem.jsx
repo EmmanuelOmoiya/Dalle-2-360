@@ -2,12 +2,12 @@ import { Tab } from "@headlessui/react";
 import { Link } from "react-router-dom";
 import { Disclosure, Transition } from "@headlessui/react";
 import { CheckCircle, ChevronDown } from "heroicons-react";
-import { useAppContext } from '../Context/AppContext';
+import { useAppContext } from "../Context/AppContext";
 
 const NavItem = ({ name }) => {
-	const { selectedLink, setSelectedLink } = useAppContext();
+  const { selectedLink, setSelectedLink } = useAppContext();
   return (
-    <> 
+    <>
       <Tab
         className="flex w-full focus:outline-none"
         onClick={() => setSelectedLink(name)}
