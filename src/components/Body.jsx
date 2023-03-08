@@ -1,6 +1,6 @@
 import { useAppContext } from '../Context/AppContext';
 import React from 'react';
-import { EquirectangularImage } from '.';
+import EquirectangularImage from './EquirectangularImage';
 // import { Panorama } from 'react-panellum';
 
 export default function Body() {
