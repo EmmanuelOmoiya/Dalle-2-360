@@ -24,7 +24,7 @@ const Sidebar = () => {
   } = useAppContext();
   const handleSubmit = async() => {
     if (sceneItems.length !== 0) {
-      let text = `An Equirectangular view of a ${selectedCat} with ${sceneItems.join(
+      let text = `A realistic Equirectangular view of a ${selectedCat} with ${sceneItems.join(
         ", "
       )}.`;
       try {

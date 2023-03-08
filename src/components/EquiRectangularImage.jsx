@@ -4,6 +4,11 @@ import ReactPannellum from "react-pannellum";
 
 const EquirectangularImage = () => {
   const { imageUrl } = useAppContext();
+  const [image, setImage] = React.useState(imageUrl)
+  React.useEffect(()=>{
+    setImage(imageUrl)
+    alert(imageUrl)
+  },[imageUrl])
   const config = {
     autoRotate: -2,
     showZoomCtrl: false,
@@ -17,7 +22,7 @@ const EquirectangularImage = () => {
       className="h-[100vh] w-full mt-[4.5rem] md:m-0 relative"
           id="1"
           sceneId="firstScene"
-          imageSource={imageUrl}
+          imageSource={image}
           config={config}
           style={{
               width: "100%",
