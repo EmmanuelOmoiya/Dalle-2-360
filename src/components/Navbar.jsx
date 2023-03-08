@@ -6,6 +6,7 @@ import { NavItem, NavCategory, EnvironmentConfig } from ".";
 import { generateImage } from "../utils";
 import { nav } from "../constants";
 import { useAppContext } from "../Context/AppContext";
+import axios from 'axios';
 
 export default function Navbar() {
   const {
@@ -52,7 +53,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="text-white bg-black w-full p-3 md:hidden">
+    <nav className="text-white bg-black w-full p-3 md:hidden overflow-y-auto">
       <div>
         <Disclosure>
           {({ open }) => (
