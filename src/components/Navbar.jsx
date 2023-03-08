@@ -10,21 +10,44 @@ import { useAppContext } from "../Context/AppContext";
 export default function Navbar() {
   const {
     selectedCat,
+    loading,
+    setLoading,
     sceneItems,
     selectedLink,
     setSelectedLink,
     setSelectedCat,
     setSceneItems,
+    imageUrl,
+    setImageUrl
   } = useAppContext();
 
-  function handleSubmit() {
-    if (selectedCat && sceneItems) {
-      let text = `An Equirectangular view of a ${selectedCat} with ${sceneItems.join(
+  const handleSubmit = async() => {
+    if (sceneItems.length !== 0) {
+      let text = `A realistic Equirectangular view of a ${selectedCat} with ${sceneItems.join(
         ", "
       )}.`;
-      generateImage(text);
+      try {
+        setLoading(true);
+        console.log(text);
+        await axios({
+          method: "POST",
+          url: `https://dalle360-2-6k6gsdlfoa-el.a.run.app/generate-image`,
+          headers: { "Content-Type": "application/json" },
+          withCredentials: false,
+          data: { text: text },
+        })
+          .then((response) => {
+            setImageUrl(response.data.url);
+          });
+      } catch (err) {
+        setLoading(false);
+        console.log(err);
+        alert(err);
+      } finally {
+        setLoading(false);
+      }
     } else {
-      alert("You need to choose and add the required choices and scenes");
+      alert("You need to choose your preffered enviroment or scene");
     }
   }
 
@@ -112,12 +135,21 @@ export default function Navbar() {
                           </>
                         );
                       })}
-                      <button
-                        onClick={handleSubmit}
-                        className="w-full mt-4 bg-rose-500 rounded-lg py-1.5 font-medium hover:bg-rose-600 focus:bg-rose-600 transition-all duration-300"
-                      >
-                        Generate
-                      </button>
+                      {loading ? (
+                <button
+                  disabled
+                  className="w-full bg-rose-500 rounded-lg py-1.5 font-medium hover:bg-rose-600 focus:bg-rose-600 transition-all opacity-70 duration-300"
+                >
+                  Generating...
+                </button>
+              ) : (
+                <button
+                  onClick={handleSubmit}
+                  className="w-full bg-rose-500 rounded-lg py-1.5 font-medium hover:bg-rose-600 focus:bg-rose-600 transition-all duration-300"
+                >
+                  Generate
+                </button>
+              )}
                     </Tab.List>
                   </Tab.Group>
                 </Disclosure.Panel>
