@@ -38,7 +38,6 @@ const Sidebar = () => {
           data: { text: text },
         })
           .then((response) => {
-            console.log(response);
             setImageUrl(response.data.url);
           });
       } catch (err) {
