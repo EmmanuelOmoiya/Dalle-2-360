@@ -123,7 +123,7 @@ const Sidebar = () => {
                 >
                   Generating...
                 </button>
-                <p>It can take over a minute to generate your 360 environment</p>
+                <p className="text-[.9rem] opacity-80">It can take over a minute to generate your 360 environment</p>
                 </>
               ) : (
                 <button
