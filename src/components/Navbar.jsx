@@ -144,7 +144,7 @@ export default function Navbar() {
                 >
                   Generating...
                 </button>
-                <p>It can take over a minute to generate your 360 environment</p>
+                <p ] opacity-80">It can take over a minute to generate your 360 environment</p>
                 </>
               ) : (
                 <button
