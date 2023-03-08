@@ -15,7 +15,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.0",
-    "react-panellum": "^0.0.14",
     "react-router-dom": "^6.8.2"
   },
   "devDependencies": {
