@@ -7,7 +7,6 @@ const EquirectangularImage = () => {
   const [image, setImage] = React.useState(imageUrl)
   React.useEffect(()=>{
     setImage(imageUrl)
-    alert(imageUrl)
   },[imageUrl])
   const config = {
     autoRotate: -2,
