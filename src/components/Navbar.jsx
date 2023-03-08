@@ -137,12 +137,15 @@ export default function Navbar() {
                         );
                       })}
                       {loading ? (
+                      <>
                 <button
                   disabled
                   className="w-full bg-rose-500 rounded-lg py-1.5 font-medium hover:bg-rose-600 focus:bg-rose-600 transition-all opacity-70 duration-300"
                 >
                   Generating...
                 </button>
+                <p>It can take over a minute to generate your 360 environment</p>
+                </>
               ) : (
                 <button
                   onClick={handleSubmit}
