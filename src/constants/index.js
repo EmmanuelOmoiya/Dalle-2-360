@@ -20,8 +20,9 @@ export const nav = [
       properties: [
         { name: "Sunset" },
         { name: "Thunder Clouds" },
-        { name: "Sunrise" },
-        { name: "Starry Night" },
+        { name: "Forest" },
+        { name: "Snow" },
+        { name: "Waterfall" }
       ],
     }
   ]},
