@@ -29,7 +29,6 @@ const Sidebar = () => {
       )} ${selectedCat === 'Mountain' ? 'beatiful scenery,' : ''}  8k, cinematic, trending on artstation, award winning masterpiece, ${selectedCat === 'Mountain'?  'national geographic, vibrant colors, epic' : ''}.`;
       try {
         setLoading(true);
-        console.log(text);
         await axios({
           method: "POST",
           url: `https://dalle360-2-6k6gsdlfoa-el.a.run.app/generate-image`,
@@ -123,7 +122,7 @@ const Sidebar = () => {
                 >
                   Generating...
                 </button>
-                <p className="text-[.9rem] opacity-80">It can take over a minute to generate your 360 environment</p>
+                <p className="text-[.9rem] opacity-80 w-[8rem]">It can take over a minute to generate your 360 environment</p>
                 </>
               ) : (
                 <button

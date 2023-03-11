@@ -6,7 +6,7 @@ const ContextProvider = ({ children }) => {
     const [selectedCat, setSelectedCat] = React.useState("Living Room");
     const [sceneItems, setSceneItems] = React.useState([]);
     const [selectedItem, setSelectedItem] = React.useState(false);
-    const [imageUrl, setImageUrl] = React.useState('https://i.ibb.co/b6cKTCT/image.png');
+    const [imageUrl, setImageUrl] = React.useState('https://i.ibb.co/Ph2Mszw/image.png');
     const [loading, setLoading] = React.useState(false);
     return <Context.Provider value={{
         loading,
