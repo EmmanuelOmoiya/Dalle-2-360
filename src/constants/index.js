@@ -19,8 +19,9 @@ export const nav = [
       name: "Mountain",
       properties: [
         { name: "Sunset" },
-        { name: "Sunrise" },
-        { name: "Starry Night" },
+        { name: "Forest" },
+        { name: "Snow" },
+        { name: "Waterfall" }
       ],
     }
   ]},
