@@ -24,9 +24,20 @@ const Sidebar = () => {
   } = useAppContext();
   const handleSubmit = async() => {
     if (sceneItems.length !== 0) {
+      if (selectedCat === 'Living Room'){
+        let text = `A beautiful, equirectangular, ultra realistic, highly detailed, photorealistic, futuristic luxury ${selectedCat} with ${sceneItems.join(
+          ", "
+        )}, 8k, cinematic, trending on artstation, award winning, masterpiece.`;
+      }
+      else if (selectedCat === 'Mountain'){
+        let text = `A beautiful, equirectangular, ultra realistic, highly detailed, photorealistic, landscape photo of majestic ${selectedCat} with ${sceneItems.join(
+          ", "
+        )}, beautiful scenery, 8k, cinematic, beautiful dramatic lighting, atmospheric, trending on artstation, award winning, masterpiece, national geographic, vibrant colours, epic`;
+      }
+      /*
       let text = `A realistic Equirectangular view of a ${selectedCat} with ${sceneItems.join(
         ", "
-      )}.`;
+      )}.`;*/
       try {
         setLoading(true);
         console.log(text);

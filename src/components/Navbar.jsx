@@ -24,9 +24,11 @@ export default function Navbar() {
 
   const handleSubmit = async() => {
     if (sceneItems.length !== 0) {
+      
       let text = `A realistic Equirectangular view of a ${selectedCat} with ${sceneItems.join(
         ", "
       )}.`;
+      
       try {
         setLoading(true);
         console.log(text);
