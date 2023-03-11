@@ -18,7 +18,8 @@ const EquirectangularImage = () => {
   return(
     <div className="h-[100vh] w-full mt-[4.5rem] md:m-0 relative">
       <ReactPannellum
-      className="h-[100vh] w-full mt-[4.5rem] md:m-0 relative"
+          key={image}
+          className="h-[100vh] w-full mt-[4.5rem] md:m-0 relative"
           id="1"
           sceneId="firstScene"
           imageSource={image}

@@ -10,7 +10,7 @@ export default function Body() {
             {
                 imageUrl === "https://i.ibb.co/Ph2Mszw/image.png"
                 ?
-                <iframe className="h-[100vh] w-full mt-[4.5rem] md:m-0 relative" allowFullScreen={true} allow="accelerometer; magnetometer; gyroscope" src="ttps://i.ibb.co/Ph2Mszw/image.png" ></iframe>
+                <iframe className="h-[100vh] w-full mt-[4.5rem] md:m-0 relative" allowFullScreen={true} allow="accelerometer; magnetometer; gyroscope" src="https://i.ibb.co/Ph2Mszw/image.png" ></iframe>
                 :
                 <EquirectangularImage />
             }
