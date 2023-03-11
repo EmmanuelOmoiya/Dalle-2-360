@@ -9,7 +9,6 @@ export const nav = [
           { name: "LED lights" },
           { name: "Seats" },
           { name: "Coffee Table" },
-          { name: "Carpet" },
           { name: "Dinner Table" },
           { name: "Wide windows" },
           { name: "Plants" }
