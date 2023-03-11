@@ -24,9 +24,9 @@ export default function Navbar() {
 
   const handleSubmit = async() => {
     if (sceneItems.length !== 0) {
-      let text = `A realistic Equirectangular view of a ${selectedCat} with ${sceneItems.join(
+      let text = `A beautiful, equirectangular, ultra-realistic, highly detailed, photorealistic ${selectedCat === 'Living Room' ? 'futuristic living room' : ''} ${selectedCat === 'Mountain' ? 'landscape, photo of majestic mountains' : ''} with ${sceneItems.join(
         ", "
-      )}.`;
+      )} ${selectedCat === 'Mountain' ? 'beatiful scenery,' : ''}  8k, cinematic, trending on artstation, award winning masterpiece, ${selectedCat === 'Mountain'?  'national geographic, vibrant colors, epic' : ''}.`;
       try {
         setLoading(true);
         console.log(text);
@@ -144,7 +144,7 @@ export default function Navbar() {
                 >
                   Generating...
                 </button>
-                <p ] opacity-80">It can take over a minute to generate your 360 environment</p>
+                <p className="opacity-80">It can take over a minute to generate your 360 environment</p>
                 </>
               ) : (
                 <button
