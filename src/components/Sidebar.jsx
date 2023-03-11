@@ -24,9 +24,9 @@ const Sidebar = () => {
   } = useAppContext();
   const handleSubmit = async() => {
     if (sceneItems.length !== 0) {
-      let text = `A beautiful, equirectangular, ultra-realistic, highly detailed, photorealistic ${selectedCat === 'Living Room' ? 'futuristic living room' : ''} ${selectedCat === 'Mountain' ? 'landscape, photo of majestic mountains' : ''} with ${sceneItems.join(
+      let text = `A beautiful, equirectangular, ${selectedCat === 'Living Room' ? 'futuristic living room' : ''} ${selectedCat === 'Mountain' ? 'landscape, photo of majestic mountains' : ''} with ${sceneItems.join(
         ", "
-      )} ${selectedCat === 'Mountain' ? 'beatiful scenery,' : ''}  8k, cinematic, trending on artstation, award winning masterpiece, ${selectedCat === 'Mountain'?  'national geographic, vibrant colors, epic' : ''}.`;
+      )} ${selectedCat === 'Mountain' ? 'beatiful scenery,' : ''}  8k, cinematic, trending on artstation, ${selectedCat === 'Mountain'?  'national geographic, vibrant colors, epic, award winning masterpiece,' : ''} ultra-realistic, highly detailed, photorealistic.`;
       try {
         setLoading(true);
         console.log(text);
