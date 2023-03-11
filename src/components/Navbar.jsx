@@ -54,7 +54,7 @@ export default function Navbar() {
 
   return (
     <nav className="text-white bg-black w-full p-3 md:hidden overflow-y-auto">
-      <div>
+      <div className="overflow-y-auto">
         <Disclosure>
           {({ open }) => (
             <>

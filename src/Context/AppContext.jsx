@@ -20,7 +20,7 @@ const ContextProvider = ({ children }) => {
         selectedItem, 
         setSelectedItem,
         imageUrl,
-        setImageUrl
+        setImageUrl,
     }}>
         {children}
     </Context.Provider>
